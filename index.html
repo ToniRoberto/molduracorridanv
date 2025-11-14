@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editor de Moldura</title>
+
+    <!-- Impede zoom automático e melhora o toque/arraste no mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Editor de Moldura</h2>
+
+    <div class="editor-container">
+
+        <!-- ÁREA DO EDITOR -->
+        <div id="editor">
+            <img id="foto" alt="">
+            <img id="moldura" src="moldura.png" alt="Moldura">
+        </div>
+
+        <!-- CONTROLES PRINCIPAIS -->
+        <div class="controls">
+
+            <input type="file" id="upload" accept="image/*">
+
+            <label>Zoom</label>
+            <input type="range" id="zoom" min="0.0" max="3" value="1" step="0.01">
+
+            <button id="baixar">Baixar Imagem Final</button>
+        </div>
+
+        <!-- FILTROS -->
+        <div class="filtros-box" style="margin-top: 20px;">
+
+            <label>Preto e Branco:</label>
+            <input type="checkbox" id="filtroPB">
+            <br><br>
+
+            <label>Brilho:</label>
+            <input type="range" id="filtroBrilho" min="50" max="200" value="100">
+            <br><br>
+
+            <label>Contraste:</label>
+            <input type="range" id="filtroContraste" min="50" max="200" value="100">
+
+        </div>
+
+    </div>
+
+    <!-- CANVAS OCULTO USADO PARA DOWNLOAD -->
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
